@@ -3,10 +3,10 @@ package racingcar.domain
 import racingcar.util.NumberGenerator
 
 data class Cars(
-    private val numberGenerator: NumberGenerator,
-    private val carCount: Int
+    private val carNameList: List<String>,
+    private val numberGenerator: NumberGenerator
 ) : Iterable<Car> {
-    private val cars = Array(carCount) { Car(numberGenerator) }
+    private val cars = Array(carNameList.size) { index -> Car(carNameList[index], numberGenerator) }
 
     fun moveAll() {
         cars.forEach { it.move() }

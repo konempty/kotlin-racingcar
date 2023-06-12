@@ -10,7 +10,7 @@ class RacingGame(
     private val gameParam: RacingGameParam,
     numberGenerator: NumberGenerator = RandomNumberGenerator()
 ) {
-    val cars: Cars = Cars(numberGenerator, gameParam.carCount)
+    val cars: Cars = Cars(gameParam.carNameList, numberGenerator)
 
     fun start() {
         ResultView.printResultMessage()

@@ -14,7 +14,7 @@ class RacingTest : BehaviorSpec({
 
     beforeEach {
         target = RacingGame(
-            RacingGameParam(carCount, rounds),
+            RacingGameParam((0 until carCount).map { it.toString() }, rounds),
             OrderNumberGenerator(*(Constant.MIN_GENERATED_NUMBER..Constant.MAX_GENERATED_NUMBER).toList().toIntArray())
         )
     }
